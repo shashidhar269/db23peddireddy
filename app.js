@@ -59,7 +59,7 @@ var AddModsRouter = require('./routes/AddMods');
 var SelectorRouter = require('./routes/Selector');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var resourceRouter = require('./routes/resource');
 var app = express();
 
 // view engine setup
@@ -76,6 +76,7 @@ app.use('/AddMods', AddModsRouter);
 app.use('/Selector', SelectorRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', resourceRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
