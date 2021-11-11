@@ -1,5 +1,5 @@
 var express = require('express');
-const pen_controlers= require('../controllers/camera');
+const pen_controlers= require('../controllers/pen');
 var router = express.Router();
 /* GET bottle */
 router.get('/', pen_controlers.pen_view_all_Page );
