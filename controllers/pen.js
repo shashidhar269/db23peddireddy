@@ -15,9 +15,9 @@ exports.pen_create_post = async function (req, res) {
     // Even though bodies can be in many different formats, we will be picky
     // and require that it be a json object
     // {"pen_type":"regular", "quantity":13, "cost":43.56}
-    document.pen_type = req.body.pen_type;
-    document.quantity = req.body.quantity;
-    document.cost = req.body.cost;
+    document.Brand = req.body.Brand;
+    document.price = req.body.price;
+    document.color = req.body.color;
     try {
         let result = await document.save();
         res.send(result);
