@@ -4,5 +4,5 @@ const penSchema = mongoose.Schema({
     price: Number,
     color: String
 })
-module.exports = mongoose.model("pen",
+module.exports = mongoose.model("Pen",
 penSchema)

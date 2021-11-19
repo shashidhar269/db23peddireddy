@@ -1,0 +1,16 @@
+extends layout
+block content
+ h1= title
+  - let penid = toShow._id
+  - let pen_type = toShow.pen_type
+  - let pencost = toShow.cost
+  - let pensize = toShow.size
+ div
+  div.row
+   div(class='penAttr mr-3') Costume ID is: #{penid}
+  div.row
+   div(class='pen mr-3') Costume Type is: #{pen_type}
+  div.row
+   div(class='penAttr mr-3') Costume Size is: #{pensize}
+  div.row
+   div(class='pen mr-3') Costume Cost is: #{pencost}
