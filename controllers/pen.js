@@ -23,10 +23,7 @@ exports.pen_create_post = async function (req, res) {
         res.send(`{"error": ${err}}`);
     }
 };
-// Handle pen delete form on DELETE.
-exports.pen_delete = function (req, res) {
-    res.send('NOT IMPLEMENTED: Pen delete DELETE ' + req.params.id);
-};
+
 // Handle Pen update form on PUT.
 exports.pen_update_put = async function(req, res) { 
     console.log(`update on id ${req.params.id} with body 
@@ -78,7 +75,7 @@ exports.pen_detail = async function(req, res) {
     console.log("detail"  + req.params.id) 
     try { 
         result = await Pen.findById( req.params.id) 
-        res.render('pendetail',{title:'Pen Detail',toShow:result}); 
+        res.render('pendetail',{title:'Pen Detail',toShow : result}); 
     } catch (error) { 
         res.status(500) 
         res.send(`{"error": document for id ${req.params.id} not found`); 

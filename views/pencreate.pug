@@ -6,7 +6,7 @@ block content
   form(id='PenForm', action="/resource/pens", method="POST") 
     div.form-group 
         label.penAttr(for='pen_type') Pen type 
-        input#pen_type(type='text', name='pen_type') 
+        input#pen_type(type='text', name='pen_type',minlength="5",maxlength="13") 
     div.form-group 
         label.penAttr(for='size') Pen size 
         input#size(type='text', name='size') 
