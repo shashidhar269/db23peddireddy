@@ -2,6 +2,13 @@ var express = require('express');
 const pen_controlers= require('../controllers/pen');
 var router = express.Router();
 /* GET bottle */
+const secured = (req, res, next) => { 
+  if (req.user){ 
+    return next(); 
+  } 
+  req.session.returnTo = req.originalUrl; 
+  res.redirect("/login"); 
+} 
 router.get('/', pen_controlers.pen_view_all_Page );
 module.exports = router;
 
@@ -25,7 +32,7 @@ router.get('/create', pen_controlers.pen_create_Page);
 
 
 /* GET create update page */ 
-router.get('/update', pen_controlers.pen_update_Page); 
+router.get('/update',secured, pen_controlers.pen_update_Page); 
 
 
 /* GET create pen page */ 
